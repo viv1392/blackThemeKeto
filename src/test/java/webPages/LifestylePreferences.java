@@ -1,0 +1,30 @@
+package webPages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import utilities.UtilitiesClass;
+
+public class LifestylePreferences extends UtilitiesClass {
+	WebDriver driver;
+	public DoesAnyOfTheFollowingApplyForYou apply;
+
+	public LifestylePreferences(WebDriver driver) {
+		this.driver=driver;
+		
+	}
+	@FindBy(xpath="//h3[text()='None of the above']")
+	WebElement eleNon;
+	@FindBy(xpath="//span[text()='Next']")
+	WebElement eleN;
+	
+	public DoesAnyOfTheFollowingApplyForYou nonePref() {
+		scroll(driver,0,600);
+		eleNon.click();
+		eleN.click();
+		apply=new DoesAnyOfTheFollowingApplyForYou(driver);
+		return apply;
+	}
+
+}
