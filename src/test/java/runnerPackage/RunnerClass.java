@@ -14,8 +14,6 @@ import io.cucumber.junit.CucumberOptions;
 		plugin= {"pretty","html:test-output"}
 		)
 		
-		
-
 public class RunnerClass {
 
 

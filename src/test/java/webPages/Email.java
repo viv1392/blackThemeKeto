@@ -5,24 +5,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TargetWeight {
-	WebDriver driver;
-	public Age age;
+import utilities.UtilitiesClass;
 
-	public TargetWeight(WebDriver driver) {
+public class Email extends UtilitiesClass {
+	WebDriver driver;
+
+	public Email(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(id="target_lb")
-	WebElement eleWlb;
+	@FindBy(id="mail-value")
+	WebElement eleMail;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
-	public Age targetWlb(String lb) {
-		eleWlb.sendKeys("180");
+	public void email(String mail) {
+		
+		eleMail.sendKeys(mail);
+		scroll(driver,0,600);
 		eleN.click();
-		age =new Age(driver);
-		return age;
+		
 	}
 
 }

@@ -21,3 +21,6 @@ Background:
   Then User selects height in Cm
   And User eneters current weight in lbs
   Then User eneters target weight in lbs
+  And User enters valid age
+  Then User selects event as NO
+  And User enters valid email

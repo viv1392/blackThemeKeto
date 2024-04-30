@@ -19,10 +19,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.UtilitiesClass;
+import webPages.Age;
 import webPages.BodyTypeUserWants;
 import webPages.CurrentBodyType;
 import webPages.CurrentWeight;
 import webPages.DoesAnyOfTheFollowingApplyForYou;
+import webPages.Email;
+import webPages.Event;
 import webPages.GenderPage;
 import webPages.HowActiveAreYou;
 import webPages.HowTallAreYou;
@@ -57,6 +60,9 @@ public class StepsD extends UtilitiesClass {
 	public HowTallAreYou tall;
 	public CurrentWeight currWlb;
 	public TargetWeight trrWlb;
+	public Age age;
+	public Event event;
+    public Email email;
 	
 	@Before
 	public void browserSetUp() throws MalformedURLException {
@@ -172,8 +178,21 @@ public class StepsD extends UtilitiesClass {
 	}
 	@Then("User eneters target weight in lbs")
 	public void targetWeight() {
-		trrWlb.targetWlb("182");
+		age=trrWlb.targetWlb("182");
 		
+	}
+	@And("User enters valid age")
+	public void age() {
+		event=age.age("38");
+		
+	}
+	@Then("User selects event as NO")
+	public void event() {
+		email=event.event();
+	}
+	@And("User enters valid email")
+	public void email() {
+		email.email("vpp@yopmail.com");
 	}
 
 

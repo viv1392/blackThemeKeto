@@ -5,24 +5,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TargetWeight {
+public class Age {
 	WebDriver driver;
-	public Age age;
+	public Event event;
 
-	public TargetWeight(WebDriver driver) {
+	public Age(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(id="target_lb")
-	WebElement eleWlb;
+	@FindBy(xpath="//input[@type='number']")
+	WebElement eleAg;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
-	public Age targetWlb(String lb) {
-		eleWlb.sendKeys("180");
+	public Event age(String age) {
+		eleAg.sendKeys(age);
 		eleN.click();
-		age =new Age(driver);
-		return age;
+		event=new Event(driver);
+		return event;
+		
 	}
 
 }
