@@ -18,4 +18,6 @@ Background:
   Then User selects his day how it goes
   And User selects lifestyle preferences
   When User selects None diseases
-  Then User selects height in "Cm"
+  Then User selects height in Cm
+  And User eneters current weight in lbs
+  Then User eneters target weight in lbs

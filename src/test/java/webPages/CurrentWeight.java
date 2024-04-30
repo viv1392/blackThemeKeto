@@ -5,23 +5,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HowTallAreYou {
+public class CurrentWeight {
 	WebDriver driver;
-	CurrentWeight currWl;
+	public TargetWeight trrWlb;
 
-	public HowTallAreYou(WebDriver driver) {
+	public CurrentWeight(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(id="height_cm_id")
-	WebElement eleH;
+	@FindBy(id="weight_lb")
+	WebElement eleWlb;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
-	public CurrentWeight heightINCm(String Cm) {
-		eleH.sendKeys(Cm);
+	public TargetWeight currentWeightLb(String lb) {
+		eleWlb.sendKeys(lb);
 		eleN.click();
-		currWl=new CurrentWeight(driver);
-		return currWl;
+		trrWlb=new TargetWeight(driver);
+		return trrWlb;
 	}
 }

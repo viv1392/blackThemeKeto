@@ -21,6 +21,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.UtilitiesClass;
 import webPages.BodyTypeUserWants;
 import webPages.CurrentBodyType;
+import webPages.CurrentWeight;
 import webPages.DoesAnyOfTheFollowingApplyForYou;
 import webPages.GenderPage;
 import webPages.HowActiveAreYou;
@@ -31,6 +32,7 @@ import webPages.LifestylePreferences;
 import webPages.MealPreparationTime;
 import webPages.Meat;
 import webPages.OtherFoodItems;
+import webPages.TargetWeight;
 import webPages.TargetZones;
 import webPages.Veggies;
 import webPages.WhatDoYouWantToAchieve;
@@ -53,6 +55,8 @@ public class StepsD extends UtilitiesClass {
 	public LifestylePreferences preferences;
 	public DoesAnyOfTheFollowingApplyForYou apply;
 	public HowTallAreYou tall;
+	public CurrentWeight currWlb;
+	public TargetWeight trrWlb;
 	
 	@Before
 	public void browserSetUp() throws MalformedURLException {
@@ -156,9 +160,19 @@ public class StepsD extends UtilitiesClass {
 		tall=apply.diseaseApplicable();
 			
 	}
-	@Then("User selects height in (.+)")
+	@Then("User selects height in Cm")
 	public void heightCm() {
-		tall.heightINCm("176");
+		currWlb=tall.heightINCm("176");
+		
+	}
+	@And("User eneters current weight in lbs")
+	public void currentWeightLbs() {
+		trrWlb=currWlb.currentWeightLb("210");
+		
+	}
+	@Then("User eneters target weight in lbs")
+	public void targetWeight() {
+		trrWlb.targetWlb("182");
 		
 	}
 
