@@ -9,6 +9,7 @@ import utilities.UtilitiesClass;
 
 public class Email extends UtilitiesClass {
 	WebDriver driver;
+	public PlansPage plans;
 
 	public Email(WebDriver driver) {
 		this.driver=driver;
@@ -19,11 +20,13 @@ public class Email extends UtilitiesClass {
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
-	public void email(String mail) {
+	public PlansPage email(String mail) {
 		
 		eleMail.sendKeys(mail);
 		scroll(driver,0,600);
 		eleN.click();
+		plans =new PlansPage(driver);
+		return plans;
 		
 	}
 

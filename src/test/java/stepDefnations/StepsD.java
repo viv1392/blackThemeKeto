@@ -35,6 +35,7 @@ import webPages.LifestylePreferences;
 import webPages.MealPreparationTime;
 import webPages.Meat;
 import webPages.OtherFoodItems;
+import webPages.PlansPage;
 import webPages.TargetWeight;
 import webPages.TargetZones;
 import webPages.Veggies;
@@ -63,6 +64,7 @@ public class StepsD extends UtilitiesClass {
 	public Age age;
 	public Event event;
     public Email email;
+    public PlansPage plans;
 	
 	@Before
 	public void browserSetUp() throws MalformedURLException {
@@ -96,7 +98,7 @@ public class StepsD extends UtilitiesClass {
 	}
 	@After
 	public void browserTearDown() {
-		//driver.quit();
+		driver.quit();
 	}
 	
 	
@@ -109,9 +111,17 @@ public class StepsD extends UtilitiesClass {
 	public void genderWomen() {
 		currBody=gender.woman();
 	}
+	@Then("User selects user gender as Man")
+	public void genderMen() {
+		currBody=gender.men();
+	}
 	@And("User selects user body as volputuous")
 	public void current_Body_Type() {
 		bodyWants=currBody.volputuous();
+	}
+	@And("User selects user body as Extra")
+	public void current_Body_TypeE() {
+	    bodyWants=currBody.extra();
 	}
 	@Then("User selects body type user wants")
 	public void bodyType_user_wants() {
@@ -139,6 +149,11 @@ public class StepsD extends UtilitiesClass {
 	@When("User selects diet type meat")
 	public void meat() {
 		veggies=meat.meat();
+		
+	}
+	@When("User selects diet Veg")
+	public void veg() {
+		veggies=meat.vegetarian();
 		
 	}
 	@And("User choses all veggies to eat")
@@ -171,19 +186,34 @@ public class StepsD extends UtilitiesClass {
 		currWlb=tall.heightINCm("176");
 		
 	}
-	@And("User eneters current weight in lbs")
-	public void currentWeightLbs() {
-		trrWlb=currWlb.currentWeightLb("210");
+	@Then("User selects height in ft")
+	public void heightft() {
+		currWlb=tall.heightINFt();
 		
 	}
-	@Then("User eneters target weight in lbs")
-	public void targetWeight() {
-		age=trrWlb.targetWlb("182");
+	@And("^User eneters current weight in (.+)$")
+	public void currentWeightLbs(String lbs) {
+		trrWlb=currWlb.currentWeightLb(lbs);
+		
+	}
+	@And("^User current weight in kg (.+)$")
+	public void currentWeightkg(String kg) {
+		trrWlb=currWlb.currentWeightkg(kg);
+		
+	}
+	@Then("^User eneters target weight in (.+)$")
+	public void targetWeight(String lbs1) {
+		age=trrWlb.targetWlb(lbs1);
+		
+	}
+	@Then("^User target weight in kg (.+)$")
+	public void targetWeighkgt(String kg1) {
+		age=trrWlb.targetkg(kg1);
 		
 	}
 	@And("User enters valid age")
 	public void age() {
-		event=age.age("38");
+		event=age.age("36");
 		
 	}
 	@Then("User selects event as NO")
@@ -192,7 +222,12 @@ public class StepsD extends UtilitiesClass {
 	}
 	@And("User enters valid email")
 	public void email() {
-		email.email("vpp@yopmail.com");
+		plans=email.email("vpp@yopmail.com");
+	}
+	@Then("User goes plan page and click on chose plan button")
+	public void planPAge() throws InterruptedException {
+		plans.choosePlan();
+		
 	}
 
 

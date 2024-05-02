@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features= ".//featureFiles/blackTheme.feature",
+		features= ".//featureFiles/Funnel.feature",
 		glue= "stepDefnations",
 		monochrome= true,
 		dryRun=false,

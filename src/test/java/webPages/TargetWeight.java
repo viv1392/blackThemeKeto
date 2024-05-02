@@ -15,11 +15,19 @@ public class TargetWeight {
 	}
 	@FindBy(id="target_lb")
 	WebElement eleWlb;
+	@FindBy(id="target_kg")
+	WebElement elekg;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
 	public Age targetWlb(String lb) {
-		eleWlb.sendKeys("180");
+		eleWlb.sendKeys(lb);
+		eleN.click();
+		age =new Age(driver);
+		return age;
+	}
+	public Age targetkg(String kg) {
+		elekg.sendKeys(kg);
 		eleN.click();
 		age =new Age(driver);
 		return age;

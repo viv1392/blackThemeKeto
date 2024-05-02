@@ -33,11 +33,15 @@ public class Meat extends UtilitiesClass {
 	}
 	public Veggies vegetarian() {
 		eleVeget.click();
+		scroll(driver,0,800);
+		eleN.click();
 		veggies=new  Veggies(driver);
 		return veggies;
 	}
 	public Veggies vegan() {
 		eleVeg.click();
+		scroll(driver,0,800);
+		eleN.click();
 		veggies=new  Veggies(driver);
 		return veggies;
 	}

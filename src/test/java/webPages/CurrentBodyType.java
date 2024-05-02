@@ -19,6 +19,8 @@ public class CurrentBodyType {
 	WebElement eleA;
 	@FindBy(xpath="//h3[text()='Plump']")
 	WebElement eleP;
+	@FindBy(xpath="//h3[text()='Extra']")
+	WebElement eleE;
 	
 	public BodyTypeUserWants volputuous() {
 		eleV.click();
@@ -32,6 +34,11 @@ public class CurrentBodyType {
 	}
 	public BodyTypeUserWants plump() {
 		eleP.click();
+		bodyWnats=new BodyTypeUserWants(driver);
+	    return bodyWnats;
+	}
+	public BodyTypeUserWants extra() {
+		eleE.click();
 		bodyWnats=new BodyTypeUserWants(driver);
 	    return bodyWnats;
 	}
