@@ -4,7 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.github.javafaker.Faker;
+
 public class UtilitiesClass {
+    public Faker faker= new Faker();
 
 	public void scroll(WebDriver driver,int x,int y) {
 		Actions action=new Actions(driver);

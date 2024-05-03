@@ -156,6 +156,11 @@ public class StepsD extends UtilitiesClass {
 		veggies=meat.vegetarian();
 		
 	}
+	@When("User selects diet Vegan")
+	public void vegan() {
+		veggies=meat.vegan();
+		
+	}
 	@And("User choses all veggies to eat")
 		public void allVeggies() {
 		otherFood=veggies.allVeggies();
@@ -183,7 +188,7 @@ public class StepsD extends UtilitiesClass {
 	}
 	@Then("User selects height in Cm")
 	public void heightCm() {
-		currWlb=tall.heightINCm("176");
+		currWlb=tall.heightINCm("183");
 		
 	}
 	@Then("User selects height in ft")
@@ -222,7 +227,7 @@ public class StepsD extends UtilitiesClass {
 	}
 	@And("User enters valid email")
 	public void email() {
-		plans=email.email("vpp@yopmail.com");
+		plans=email.email(faker.internet().emailAddress());
 	}
 	@Then("User goes plan page and click on chose plan button")
 	public void planPAge() throws InterruptedException {
