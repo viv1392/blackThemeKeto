@@ -7,11 +7,13 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features= ".//featureFiles/Funnel.feature",
-		glue= "stepDefnations",
+		features= ".//featureFiles/RegistrationWCmFeetInch.feature",
+		glue= {"stepDefnations","hooks"},
 		monochrome= true,
 		dryRun=false,
-		plugin= {"pretty","html:test-output"}
+		plugin= {"pretty","html:target/CucumberReports/CucumberReport.html"}
+		//tags= " @WomenRegistrationNonVegVariableTargetWeight"
+		
 		)
 		
 public class RunnerClass {

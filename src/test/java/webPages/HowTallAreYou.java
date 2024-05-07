@@ -30,10 +30,18 @@ public class HowTallAreYou {
 		currWl=new CurrentWeight(driver);
 		return currWl;
 	}
-	public CurrentWeight heightINFt() {
+	public CurrentWeight heightINFt(String feet,String inch) {
 		eleFt.click();
-		eleft.sendKeys("5");
-		elein.sendKeys("09");
+		eleft.sendKeys(feet);
+		elein.sendKeys(inch);
+		eleN.click();
+		currWl=new CurrentWeight(driver);
+		return currWl;
+	}
+	public CurrentWeight invalidheightINFt() {
+		eleFt.click();
+		eleft.sendKeys("02");
+		elein.sendKeys("30");
 		eleN.click();
 		currWl=new CurrentWeight(driver);
 		return currWl;
