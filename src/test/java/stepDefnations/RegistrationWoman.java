@@ -30,7 +30,7 @@ import webPages.TargetZones;
 import webPages.Veggies;
 import webPages.WhatDoYouWantToAchieve;
 
-public class RegistrationWomanCmFeetInch extends UtilitiesClass {
+public class RegistrationWoman extends UtilitiesClass {
 	WebDriver driver;
 	GenderPage gender;
 	CurrentBodyType currBody;

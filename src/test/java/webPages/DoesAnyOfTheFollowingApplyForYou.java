@@ -18,6 +18,12 @@ public class DoesAnyOfTheFollowingApplyForYou extends UtilitiesClass {
 	
 	@FindBy(xpath="//h3[text()='None of the above']")
 	WebElement eleNone;
+	@FindBy(xpath="//h3[text()='Diabetes']")
+	WebElement eleD;
+	@FindBy(xpath="//h3[text()='High cholesterol']")
+	WebElement eleHC;
+	@FindBy(xpath="//h3[text()='Thyroid issues']")
+	WebElement eleTi;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
@@ -28,6 +34,15 @@ public class DoesAnyOfTheFollowingApplyForYou extends UtilitiesClass {
 		tall=new HowTallAreYou(driver);
 		return tall;
 	
+	}
+	public HowTallAreYou diseseas() {
+		eleD.click();
+		eleHC.click();
+		scroll(driver,0,800);
+		eleTi.click();
+		eleN.click();
+		tall=new HowTallAreYou(driver);
+		return tall;
 	}
 
 }

@@ -17,6 +17,12 @@ public class OtherFoodItems extends UtilitiesClass {
 	}
 	@FindBy(xpath="//h3[text()='I eat all']")
 	WebElement eleAllOther;
+	@FindBy(xpath="//h3[text()='Egg']")
+	WebElement eleE;
+	@FindBy(xpath="//h3[text()='Nuts']")
+	WebElement eleNU;
+	@FindBy(xpath="//h3[text()='Cheese']")
+	WebElement eleC;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
@@ -26,6 +32,16 @@ public class OtherFoodItems extends UtilitiesClass {
 		eleN.click();
 		active=new HowActiveAreYou(driver);
 		return active;
+	}
+	public HowActiveAreYou customOtherFood() {
+		scroll(driver,0,1000);
+		eleE.click();
+		eleNU.click();
+		eleC.click();
+		eleN.click();
+		active=new HowActiveAreYou(driver);
+		return active;
+		
 	}
 
 }

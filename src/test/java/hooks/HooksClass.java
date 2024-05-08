@@ -16,18 +16,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import webPages.GenderPage;
 
 public class HooksClass {
-	public  WebDriver driver;
+	public WebDriver driver;
 	public GenderPage gender;
 
 	@Before
-	public  void  Setup() {
-		
-		
-		driver=DriverFactory.intiliseDriver();
+	public void Setup() {
+
+		driver = DriverFactory.intiliseDriver();
 		driver.get("https://gl.ketobalanced.com/usa");
-		
-		
-		
+
 //		WebDriverManager.chromedriver().setup();
 //		ChromeOptions option = new ChromeOptions();
 //
@@ -64,6 +61,5 @@ public class HooksClass {
 		}
 		driver.quit();
 	}
-	
 
 }

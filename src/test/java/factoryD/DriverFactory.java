@@ -27,7 +27,7 @@ public class DriverFactory {
 //    		driver = new RemoteWebDriver(url, option);
 
 		option.addArguments("--incognito");
-		option.addArguments("--headless");
+		//option.addArguments("--headless");
 		option.addArguments("--enablenotification");
 		driver = new ChromeDriver(option);
 		driver.manage().deleteAllCookies();

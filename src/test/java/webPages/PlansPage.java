@@ -1,5 +1,7 @@
 package webPages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,11 +18,15 @@ public class PlansPage extends UtilitiesClass{
 	}
 	@FindBy(xpath="//span[text()='CHOOSE YOUR PLAN NOW']")
 	WebElement ele;
+	@FindBy(xpath="//span[text()='Buy Now']")
+	List<WebElement> elePlans;
 	
 	public void choosePlan() throws InterruptedException {
 		scrollTillView(driver,ele);
+		ele.click();
 		Thread.sleep(2000);
 		ele.click();
+		elePlans.get(0).click();
 	}
 
 }

@@ -19,12 +19,18 @@ public class WhatDoYouWantToAchieve {
 	WebElement eleBH;
 	@FindBy(xpath="//h3[text()='Sleep better']")
 	WebElement eleSB;
+	@FindBy(xpath="//h3[text()='Reduce cholesterol level']")
+	WebElement eleCl;
+	@FindBy(xpath="//h3[text()='Increase life expectancy']")
+	WebElement eleLE;
 	@FindBy(xpath="//span[text()='Yes, I Got it']")
 	WebElement eleGOT;
 	
 	public TargetZones wantTOAchieve() {
+		eleLE.click();
 		eleLW.click();
 		eleBH.click();
+		eleCl.click();
 		eleSB.click();
 		eleGOT.click();
 		zone=new TargetZones(driver);

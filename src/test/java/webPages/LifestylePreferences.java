@@ -18,12 +18,27 @@ public class LifestylePreferences extends UtilitiesClass {
 	}
 	@FindBy(xpath="//h3[text()='None of the above']")
 	WebElement eleNon;
+	@FindBy(xpath="//h3[text()='I do not get quality sleep']")
+	WebElement eleS;
+	@FindBy(xpath="//h3[text()='I eat late at night']")
+	WebElement eleEL;
+	@FindBy(xpath="//h3[text()='I like soft drinks']")
+	WebElement eleSD;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
 	public DoesAnyOfTheFollowingApplyForYou nonePref() {
 		scroll(driver,0,600);
 		eleNon.click();
+		eleN.click();
+		apply=new DoesAnyOfTheFollowingApplyForYou(driver);
+		return apply;
+	}
+	public DoesAnyOfTheFollowingApplyForYou lifePref() {
+		eleS.click();
+		eleEL.click();
+		scroll(driver,0,600);
+		eleSD.click();
 		eleN.click();
 		apply=new DoesAnyOfTheFollowingApplyForYou(driver);
 		return apply;

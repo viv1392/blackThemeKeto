@@ -15,9 +15,16 @@ public class Event {
 	}
 	@FindBy(xpath="//h3[text()='No']")
 	WebElement eleNo;
+	@FindBy(xpath="//h3[text()='Family occasion']")
+	WebElement eleFO;
 	
 	public Email event() {
 		eleNo.click();
+		email=new Email(driver);
+		return email;
+	}
+	public Email familyOccassion() {
+		eleFO.click();
 		email=new Email(driver);
 		return email;
 	}
