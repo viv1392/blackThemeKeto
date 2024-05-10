@@ -95,7 +95,7 @@ public class RegistrationMen extends UtilitiesClass {
 	public void veggies() {
 		otherFood=veggies.customVeggies();
 	}
-	@And("user selects other custom foods for himself")
+	@And("user selects other custom foods for himself as non veg user")
 	public void otherCustomMeal() {
 		active=otherFood.customOtherFood();
 		
@@ -145,6 +145,29 @@ public class RegistrationMen extends UtilitiesClass {
 	@Then("user selects his plan")
 	public void planSelection() throws InterruptedException {
 		plans.choosePlan();
+	}
+	@Then("^user enters his height in ft (.+) and Inch (.+)$")
+	public void heightInFtIn(String Ft,String In) {
+		currW=tall.heightINFt(Ft, In);
+		
+	}
+	@And("^user enters his current weight (.+)  in Lbs$")
+	public void currentWeightLbS(String CurrLbs) {
+		tarW=currW.currentWeightLb(CurrLbs);
+	}
+	@Then("^user enters his target weight (.+) for achieving in lbs$")
+	public void tarWeightLbs(String TarLbs) {
+		age=tarW.targetWlb(TarLbs);
+	}
+	@And("usesr selects himself as vegan user")
+	public void veganUser() {
+		veggies=meat.vegan();
+		
+	}
+	@And("user selects other custom vegan foods for himself")
+	public void customOtherVeganFood() {
+		active=otherFood.veganCustom();
+		
 	}
 
 

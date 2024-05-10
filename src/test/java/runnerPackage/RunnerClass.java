@@ -7,12 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features= ".//featureFiles",
+		features= ".//featureFiles/RegistrationMen.feature",
 		glue= {"stepDefnations","hooks"},
 		monochrome= true,
 		dryRun=false,
 		plugin= {"pretty","html:target/CucumberReports/CucumberReport.html"}
-		//tags= " @menRegistrationNonVeg"
+		//tags= "  @menRegistrationVegan"
 		
 		)
 		
