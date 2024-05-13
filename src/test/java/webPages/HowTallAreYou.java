@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HowTallAreYou {
+import utilities.UtilitiesClass;
+
+public class HowTallAreYou extends UtilitiesClass {
 	WebDriver driver;
 	CurrentWeight currWl;
 
@@ -13,7 +15,7 @@ public class HowTallAreYou {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(id="height_cm_id")
+	@FindBy(xpath="//label[@for='height_cm_id']")
 	WebElement eleH;
 	@FindBy(xpath="//div[text()='Ft']")
 	WebElement eleFt;
@@ -25,6 +27,7 @@ public class HowTallAreYou {
 	WebElement eleN;
 	
 	public CurrentWeight heightINCm(String Cm) {
+		scroll(driver,0,400);
 		eleH.sendKeys(Cm);
 		eleN.click();
 		currWl=new CurrentWeight(driver);

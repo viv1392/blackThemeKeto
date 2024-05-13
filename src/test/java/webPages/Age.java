@@ -13,7 +13,7 @@ public class Age {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="//input[@type='number']")
+	@FindBy(xpath="//label[@for='age_yrs']")
 	WebElement eleAg;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;

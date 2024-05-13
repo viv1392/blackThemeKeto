@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CurrentWeight {
+import utilities.UtilitiesClass;
+
+public class CurrentWeight extends UtilitiesClass {
 	WebDriver driver;
 	public TargetWeight trrWlb;
 
@@ -13,22 +15,24 @@ public class CurrentWeight {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(id="weight_lb")
+	@FindBy(xpath="//label[@for='weight_lb']")
 	WebElement eleWlb;
-	@FindBy(xpath="//div[text()='kg']")
+	@FindBy(xpath="(//div[text()='kg'])[1]")
 	WebElement elekg;
-	@FindBy(id="weight_kg")
+	@FindBy(xpath="//label[@for='weight_kg']")
 	WebElement elekgI;
 	@FindBy(xpath="//span[text()='Next']")
 	WebElement eleN;
 	
 	public TargetWeight currentWeightLb(String lb) {
+		scroll(driver,0,400);
 		eleWlb.sendKeys(lb);
 		eleN.click();
 		trrWlb=new TargetWeight(driver);
 		return trrWlb;
 	}
 	public TargetWeight currentWeightkg(String kg) {
+		scroll(driver,0,400);
 		elekg.click();
 		elekgI.sendKeys(kg);
 		eleN.click();
