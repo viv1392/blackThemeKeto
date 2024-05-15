@@ -1,5 +1,6 @@
 package utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,5 +18,10 @@ public class UtilitiesClass {
 	public void scrollTillView(WebDriver driver, WebElement ele) {
 		Actions action=new Actions(driver);
 		action.scrollToElement(ele).build().perform();
+	}
+	public void scriptExecutor(WebDriver driver,WebElement ele) {
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", ele);
+		
 	}
 }

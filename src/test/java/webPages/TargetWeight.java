@@ -23,16 +23,18 @@ public class TargetWeight extends UtilitiesClass {
 	WebElement eleN;
 	
 	public Age targetWlb(String lb) {
-		scroll(driver,0,400);
+		//scroll(driver,0,100);
 		eleWlb.sendKeys(lb);
-		eleN.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		age =new Age(driver);
 		return age;
 	}
 	public Age targetkg(String kg) {
-		scroll(driver,0,400);
+		//scroll(driver,0,100);
 		elekg.sendKeys(kg);
-		eleN.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		age =new Age(driver);
 		return age;
 	}

@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WhatDoYouWantToAchieve {
+import utilities.UtilitiesClass;
+
+public class WhatDoYouWantToAchieve extends UtilitiesClass {
 	WebDriver driver;
 	public TargetZones zone;
 
@@ -27,12 +29,18 @@ public class WhatDoYouWantToAchieve {
 	WebElement eleGOT;
 	
 	public TargetZones wantTOAchieve() {
-		eleLE.click();
-		eleLW.click();
-		eleBH.click();
-		eleCl.click();
-		eleSB.click();
-		eleGOT.click();
+		scriptExecutor(driver,eleLE);
+		//eleLE.click();
+		scriptExecutor(driver,eleLW);
+		//eleLW.click();
+		scriptExecutor(driver,eleBH);
+		//eleBH.click();
+		scriptExecutor(driver,eleCl);
+		//eleCl.click();
+		scriptExecutor(driver,eleSB);
+		//eleSB.click();
+		scriptExecutor(driver,eleGOT);
+		//eleGOT.click();
 		zone=new TargetZones(driver);
 		return zone;
 	}

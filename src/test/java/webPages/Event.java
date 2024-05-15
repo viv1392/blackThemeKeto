@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Event {
+import utilities.UtilitiesClass;
+
+public class Event extends UtilitiesClass {
 	WebDriver driver;
 	public Email email;
 
@@ -19,12 +21,14 @@ public class Event {
 	WebElement eleFO;
 	
 	public Email event() {
-		eleNo.click();
+		scriptExecutor(driver,eleNo);
+		//eleNo.click();
 		email=new Email(driver);
 		return email;
 	}
 	public Email familyOccassion() {
-		eleFO.click();
+		scriptExecutor(driver,eleFO);
+		//eleFO.click();
 		email=new Email(driver);
 		return email;
 	}

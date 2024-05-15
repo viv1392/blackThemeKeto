@@ -28,17 +28,23 @@ public class LifestylePreferences extends UtilitiesClass {
 	WebElement eleN;
 	
 	public DoesAnyOfTheFollowingApplyForYou nonePref() {
-		scroll(driver,0,600);
-		eleNon.click();
-		eleN.click();
+		//scroll(driver,0,600);
+		scriptExecutor(driver,eleNon);
+		//eleNon.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		apply=new DoesAnyOfTheFollowingApplyForYou(driver);
 		return apply;
 	}
 	public DoesAnyOfTheFollowingApplyForYou lifePref() {
-		eleS.click();
-		eleEL.click();
-		scroll(driver,0,600);
-		eleSD.click();
+		scriptExecutor(driver,eleS);
+		//eleS.click();
+		scriptExecutor(driver,eleEL);
+		//eleEL.click();
+		//scroll(driver,0,600);
+		scriptExecutor(driver,eleSD);
+		//eleSD.click();
+		scriptExecutor(driver,eleN);
 		eleN.click();
 		apply=new DoesAnyOfTheFollowingApplyForYou(driver);
 		return apply;

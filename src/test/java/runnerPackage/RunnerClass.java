@@ -11,8 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 		glue= {"stepDefnations","hooks"},
 		monochrome= true,
 		dryRun=false,
-		plugin= {"pretty","html:target/CucumberReports/CucumberReport.html"},
-		tags= "  @menRegistrationVegan or  @menRegistrationNonVeg "
+		plugin= {"pretty","html:target/CucumberReports/CucumberReport.html"}
+		//tags= "@WomenRegistrationVegetarian"
 		
 		)
 		

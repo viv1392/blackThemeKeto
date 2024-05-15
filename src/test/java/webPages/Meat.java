@@ -25,23 +25,29 @@ public class Meat extends UtilitiesClass {
 	WebElement eleN;
 	
 	public Veggies meat(){
-		scroll(driver,0,800);
-		eleAllMeat.click();
-		eleN.click();
+		//scroll(driver,0,800);
+		scriptExecutor(driver,eleAllMeat);
+		//eleAllMeat.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		veggies=new  Veggies(driver);
 		return veggies;
 	}
 	public Veggies vegetarian() {
-		eleVeget.click();
-		scroll(driver,0,800);
-		eleN.click();
+		scriptExecutor(driver,eleVeget);
+		//eleVeget.click();
+		//scroll(driver,0,800);
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		veggies=new  Veggies(driver);
 		return veggies;
 	}
 	public Veggies vegan() {
-		eleVeg.click();
-		scroll(driver,0,800);
-		eleN.click();
+		scriptExecutor(driver,eleVeg);
+		//eleVeg.click();
+		//scroll(driver,0,800);
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		veggies=new  Veggies(driver);
 		return veggies;
 	}

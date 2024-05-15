@@ -30,19 +30,26 @@ public class Veggies extends UtilitiesClass {
 	WebElement eleN;
 	
 	public OtherFoodItems allVeggies() {
-		eleAllveggies.click();
-		scroll(driver,0,1000);
-		eleN.click();
+		scriptExecutor(driver,eleAllveggies);
+		//eleAllveggies.click();
+		//scroll(driver,0,1000);
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		otherFood=new OtherFoodItems(driver);
 		return otherFood;
 	}
 	public OtherFoodItems customVeggies() {
-		eleB.click();
-		eleZ.click();
-		scroll(driver,0,1000);
-		eleA.click();
-		eleBC.click();
-		eleN.click();
+		scriptExecutor(driver,eleB);
+		//eleB.click();
+		scriptExecutor(driver,eleZ);
+		//eleZ.click();
+		//scroll(driver,0,1000);
+		scriptExecutor(driver,eleA);
+		//eleA.click();
+		scriptExecutor(driver,eleBC);
+		//eleBC.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		otherFood=new OtherFoodItems(driver);
 		return otherFood;
 	}

@@ -25,17 +25,21 @@ public class CurrentWeight extends UtilitiesClass {
 	WebElement eleN;
 	
 	public TargetWeight currentWeightLb(String lb) {
-		scroll(driver,0,400);
+		//scroll(driver,0,100);
+		//scriptExecutor(driver,eleWlb);
 		eleWlb.sendKeys(lb);
+		scriptExecutor(driver,eleN);
 		eleN.click();
 		trrWlb=new TargetWeight(driver);
 		return trrWlb;
 	}
 	public TargetWeight currentWeightkg(String kg) {
-		scroll(driver,0,400);
-		elekg.click();
+		//scroll(driver,0,100);
+		scriptExecutor(driver,elekg);
+		//elekg.click();
 		elekgI.sendKeys(kg);
-		eleN.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		trrWlb=new TargetWeight(driver);
 		return trrWlb;
 	}

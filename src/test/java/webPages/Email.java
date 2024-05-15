@@ -23,8 +23,9 @@ public class Email extends UtilitiesClass {
 	public PlansPage email(String mail) {
 		
 		eleMail.sendKeys(mail);
-		scroll(driver,0,600);
-		eleN.click();
+		//scroll(driver,0,600);
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		plans =new PlansPage(driver);
 		return plans;
 		

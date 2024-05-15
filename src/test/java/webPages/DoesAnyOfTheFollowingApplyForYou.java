@@ -28,19 +28,25 @@ public class DoesAnyOfTheFollowingApplyForYou extends UtilitiesClass {
 	WebElement eleN;
 	
 	public HowTallAreYou diseaseApplicable() {
-		scroll(driver,0,800);
-		eleNone.click();
+		//scroll(driver,0,800);
+		scriptExecutor(driver,eleNone);
+		//eleNone.click();
+		scriptExecutor(driver,eleN);
 		eleN.click();
 		tall=new HowTallAreYou(driver);
 		return tall;
 	
 	}
 	public HowTallAreYou diseseas() {
-		eleD.click();
-		eleHC.click();
-		scroll(driver,0,800);
-		eleTi.click();
-		eleN.click();
+		scriptExecutor(driver,eleD);
+		//eleD.click();
+		scriptExecutor(driver,eleHC);
+		//eleHC.click();
+		//scroll(driver,0,800);
+		scriptExecutor(driver,eleTi);
+		//eleTi.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		tall=new HowTallAreYou(driver);
 		return tall;
 	}

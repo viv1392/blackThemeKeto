@@ -27,9 +27,10 @@ public class HowTallAreYou extends UtilitiesClass {
 	WebElement eleN;
 	
 	public CurrentWeight heightINCm(String Cm) {
-		scroll(driver,0,400);
+		//scroll(driver,0,100);
 		eleH.sendKeys(Cm);
-		eleN.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		currWl=new CurrentWeight(driver);
 		return currWl;
 	}
@@ -37,14 +38,6 @@ public class HowTallAreYou extends UtilitiesClass {
 		eleFt.click();
 		eleft.sendKeys(feet);
 		elein.sendKeys(inch);
-		eleN.click();
-		currWl=new CurrentWeight(driver);
-		return currWl;
-	}
-	public CurrentWeight invalidheightINFt() {
-		eleFt.click();
-		eleft.sendKeys("02");
-		elein.sendKeys("30");
 		eleN.click();
 		currWl=new CurrentWeight(driver);
 		return currWl;

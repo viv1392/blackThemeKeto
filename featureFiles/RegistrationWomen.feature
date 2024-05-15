@@ -14,23 +14,23 @@ Feature: keto balack theme
     Then user selects veggis as eat all
     And user selects all items in other food items
     Then user selects activity level
-    And user selects how he spends days
+    And user selects how she spends days
     Then user selects life style preferences 
     And user delects which diseases applies on her
     Then user selects how tall she is <cm>
-    And user selects curr weight in lbs
-    Then user selects target weight in lbs
-    And user selects her age
+    And user selects her curr weight in lbs <weightCurrLbs>
+    Then user selects her target weight in lbs <weightTargetLbs>
+    And user selects her age <yrs>
     Then user selects as no event
     And user enters her email
     Then user on plan pages selects plan
     Examples:
-    |cm |
-    |129| 
-    |130| 
-    |175| 
-    |190| 
-    |220| 
+    |cm |weightCurrLbs|weightTargetLbs|yrs|
+    |129| 210         |180            |23 |
+    |130| 200         |170            |28 |
+    |175| 240         |190            |33 |
+    |190| 270         |220            |38 |
+    |220| 210         |220            |42 |
     
     @WomenRegistrationVegetarian
     Scenario Outline: Women registration vegetarian
@@ -45,184 +45,26 @@ Feature: keto balack theme
     Then user selects veggis as eat all
     And user selects all items in other food items
     Then user selects activity level
-    And user selects how he spends days
+    And user selects how she spends days
     Then user selects life style preferences
     And user delects which diseases applies on her
     When user selects height in Feet and inches <feet> and <inch>
-    And user selects curr weight in lbs
-    Then user selects target weight in lbs
-    And user selects her age
+    And user selects her curr weight in kg <currKG>
+    Then user selects her target weight in kg <tarKG>
+    And user selects her age <yrs>
     Then user selects as no event
     And user enters her email
     Then user on plan pages selects plan
     
      Examples:
-    |feet | inch |
-    | 2   | 09   |
-    |03   | 11   |
-    | 4   | 09   |
-    | 5   | 10   |
-    | 6   | 01   |
-    | 7   | 00   | 
+    |feet | inch |currKG|tarKG|yrs|
+    | 2   | 09   |80    | 70  |20 |
+    |03   | 11   |85    |74   |34 |
+    | 4   | 09   |89    |75   |32 |
+    | 5   | 10   |95    |80   |42 |
+    | 6   | 01   |110   |95   |38 |
+    | 7   | 00   |130   |100  |55 |
     
-    @WomenRegistrationVegan
-    Scenario Outline: Women registration vegan
-    Then user selects gender female
-    And user selects current body type as average
-    Then user selects target body type as bulk
-    And user selects what she wants to achieve
-    Then user selects target zones
-    And user selcts last happy time zone
-    Then user selects meal preparation time
-    And user on meat page selects diet type as vegan herself
-    Then user selects veggis as eat all
-    And user selects all items in other food items
-    Then user selects activity level
-    And user selects how he spends days
-    Then user selects life style preferences
-    And user delects which diseases applies on her
-    Then user selects in static manner height
-    And user selects current weight in lbs in flexible manner <lb>
-    Then user selects target weight in lbs instatic manner
-    And user selects her age
-    Then user selects as no event
-    And user enters her email
-    Then user on plan pages selects plan
-    
-     Examples:
-    |lb    |
-    | 083  | 
-    | 099  |
-    | 180  |
-    | 250  | 
-    | 210  | 
-    | 480  | 
-    
-     @WomenRegistrationNonVegVariableTargetWeight
-  Scenario Outline: Women registration non veg
-    Then user selects gender female
-    And user selects current body type as volpotuous
-    Then user selects target body type as fit
-    And user selects what she wants to achieve
-    Then user selects target zones
-    And user selcts last happy time zone
-    Then user selects meal preparation time
-    And user on meat page selects diet type as non veg
-    Then user selects veggis as eat all
-    And user selects all items in other food items
-    Then user selects activity level
-    And user selects how he spends days
-    Then user selects life style preferences 
-    And user delects which diseases applies on her
-    Then user selects in static manner height
-    And user enters curr weight in lbs in static manner
-    Then user enters target weight in lbs in flexible manner <lbs>
-    And user selects her age
-    Then user selects as no event
-    And user enters her email
-    Then user on plan pages selects plan
-    Examples:
-    |lbs|
-    |089| 
-    |093| 
-    |170| 
-    |200| 
-    |250| 
-    
-     @WomenRegistrationNonVegAgeTesting
-  Scenario Outline: Women registration non veg
-    Then user selects gender female
-    And user selects current body type as volpotuous
-    Then user selects target body type as fit
-    And user selects what she wants to achieve
-    Then user selects target zones
-    And user selcts last happy time zone
-    Then user selects meal preparation time
-    And user on meat page selects diet type as non veg
-    Then user selects veggis as eat all
-    And user selects all items in other food items
-    Then user selects activity level
-    And user selects how he spends days
-    Then user selects life style preferences 
-    And user delects which diseases applies on her
-    Then user selects in static manner height
-    And user selects curr weight in lbs
-    Then user selects target weight in lbs
-    And user selects her age in flexible mannaer <yrs>
-    Then user selects as no event
-    And user enters her email
-    Then user on plan pages selects plan
-    Examples:
-    |yrs|
-    |17 | 
-    |18 | 
-    |28 | 
-    |38 | 
-    |49 | 
-    |60 |
-    |61 |
-    
-    @WomenRegistrationVeganCurrWeightTestingKg
-    Scenario Outline: Women registration vegan
-    Then user selects gender female
-    And user selects current body type as average
-    Then user selects target body type as bulk
-    And user selects what she wants to achieve
-    Then user selects target zones
-    And user selcts last happy time zone
-    Then user selects meal preparation time
-    And user on meat page selects diet type as vegan herself
-    Then user selects veggis as eat all
-    And user selects all items in other food items
-    Then user selects activity level
-    And user selects how he spends days
-    Then user selects life style preferences
-    And user delects which diseases applies on her
-    Then user selects in static manner height
-    And user enters current weight in kg in flexible manner <kg>
-    Then user enters targeted weight in kg in static manner
-    And user selects her age
-    Then user selects as no event
-    And user enters her email
-    Then user on plan pages selects plan
-    
-     Examples:
-    | kg   | 
-    | 040  |
-    | 099  | 
-    | 110  | 
-    | 180  | 
-    | 190  | 
-    
-     @WomenRegistrationNonVegVariableTargetWeightTestInKG
-  Scenario Outline: Women registration non veg
-    Then user selects gender female
-    And user selects current body type as volpotuous
-    Then user selects target body type as fit
-    And user selects what she wants to achieve
-    Then user selects target zones
-    And user selcts last happy time zone
-    Then user selects meal preparation time
-    And user on meat page selects diet type as non veg
-    Then user selects veggis as eat all
-    And user selects all items in other food items
-    Then user selects activity level
-    And user selects how he spends days
-    Then user selects life style preferences 
-    And user delects which diseases applies on her
-    Then user selects in static manner height
-    And user selects curr weight in kg in static manner
-    Then user selects target weight in kg in flexible manner <KG>
-    And user selects her age
-    Then user selects as no event
-    And user enters her email
-    Then user on plan pages selects plan
-    Examples:
-    |KG  |
-    |083 | 
-    |093 | 
-    |170 | 
-     
    
      
     

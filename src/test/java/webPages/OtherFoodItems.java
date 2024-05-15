@@ -31,18 +31,24 @@ public class OtherFoodItems extends UtilitiesClass {
 	WebElement eleN;
 	
 	public HowActiveAreYou allOtherItems() {
-		scroll(driver,0,1000);
-		eleAllOther.click();
-		eleN.click();
+		//scroll(driver,0,1000);
+		scriptExecutor(driver,eleAllOther);
+		//eleAllOther.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		active=new HowActiveAreYou(driver);
 		return active;
 	}
 	public HowActiveAreYou customOtherFood() {
-		scroll(driver,0,1000);
-		eleE.click();
-		eleNU.click();
-		eleC.click();
-		eleN.click();
+		//scroll(driver,0,1000);
+		scriptExecutor(driver,eleE);
+		//eleE.click();
+		scriptExecutor(driver,eleNU);
+		//eleNU.click();
+		scriptExecutor(driver,eleC);
+		//eleC.click();
+		scriptExecutor(driver,eleN);
+		//eleN.click();
 		active=new HowActiveAreYou(driver);
 		return active;
 		
